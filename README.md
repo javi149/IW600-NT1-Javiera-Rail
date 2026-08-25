@@ -20,3 +20,8 @@ se implementó unb filtro mediante una etiqueta <select> vinculada a v-model, se
 - **Componente que genera el evento:** El componente hijo (`TarjetaProducto.vue`) captura el clic y emite un evento personalizado hacia arriba usando `$emit('me-interesa', nombre)`.
 - **Componente que lo recibe:** El componente padre (`Productos.vue`) escucha este evento en la directiva `@me-interesa="manejarInteres"`.
 - **Qué ocurre después:** Al recibir el evento, el padre ejecuta el método `manejarInteres()`, el cual guarda el nombre del producto seleccionado en una variable reactiva. Esto desencadena un cambio visible en la interfaz mediante un `v-if`, mostrando una notificación verde en la parte superior del catálogo con el producto elegido.
+
+## Parte E - Formulario y validación
+Se implementó un formulario de contacto utilizando la directiva `v-model` para enlazar bidireccionalmente los campos de nombre, correo electrónico, teléfono, comuna y mensaje. 
+- **Validación:** El método `procesarFormulario` evalúa que ninguno de los campos esté vacío antes de procesar el envío. 
+- **Respuestas de la aplicación:** Si faltan datos, el sistema renderiza dinámicamente un mensaje de error advirtiendo al usuario. Si los datos son correctos, el formulario desaparece y se muestra una vista de confirmación con el resumen de la información ingresada, cumpliendo con el requerimiento sin uso de base de datos.
