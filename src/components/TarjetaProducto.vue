@@ -5,6 +5,11 @@
     <p><strong>Productor:</strong> {{ productor }}</p>
     <p><strong>Comuna:</strong> {{ comuna }}</p>
     <p class="precio">Valor: ${{ precio }}</p>
+    
+    <!-- El botón emite el evento 'me-interesa' y envía la variable 'nombre' -->
+    <button class="btn-interes" @click="$emit('me-interesa', nombre)">
+      Me interesa
+    </button>
   </div>
 </template>
 
@@ -33,5 +38,19 @@ export default {
 .precio {
   font-weight: bold;
   color: #2e7d32;
+}
+.btn-interes {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+}
+.btn-interes:hover {
+  background-color: #1b5e20;
 }
 </style>
