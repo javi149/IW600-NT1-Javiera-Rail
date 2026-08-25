@@ -16,7 +16,7 @@
       
       <div class="campo">
         <label>Teléfono:</label>
-        <input type="text" v-model="formulario.telefono" placeholder="Ej: +569...">
+        <input type="text" v-model="formulario.telefono" placeholder="Ej: +56912345678">
       </div>
       
       <div class="campo">
@@ -35,7 +35,6 @@
         <textarea v-model="formulario.mensaje" rows="4" placeholder="Escribe tu mensaje aquí..."></textarea>
       </div>
 
-      <!-- Renderizado Condicional del Error -->
       <div v-if="error" class="alerta error">
         {{ error }}
       </div>
@@ -71,7 +70,7 @@ export default {
         mensaje: ''
       },
       error: '',
-      formularioEnviado: false // Bandera para cambiar entre el formulario y el resumen
+      formularioEnviado: false 
     }
   },
   methods: {
@@ -101,6 +100,7 @@ export default {
   margin: 0 auto;
 }
 .formulario {
+  margin-top: 25px;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -132,9 +132,7 @@ export default {
   font-weight: bold;
   cursor: pointer;
 }
-.btn-enviar:hover, .btn-volver:hover {
-  background-color: #4a148c;
-}
+
 .alerta.error {
   background-color: #ffebee;
   color: #c62828;
